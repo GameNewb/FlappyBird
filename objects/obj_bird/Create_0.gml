@@ -5,7 +5,7 @@ isDead = false;
 facing = 0;
 flapSpeed = 5;
 
-grav = 0.6;
+grav = 0.8;
 vsp = 0;
 rotation = 4;
 
