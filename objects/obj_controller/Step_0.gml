@@ -11,3 +11,9 @@ if (tap) {
 	}
 }
 
+if (obj_bird.isDead && global.endgame == false) {
+	global.endgame = true;
+		
+	// Stop background scrolling
+	layer_hspeed("Background", 0);
+}
