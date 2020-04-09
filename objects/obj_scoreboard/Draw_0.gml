@@ -18,13 +18,19 @@ if (global.currentscore >= 10) {
 	draw_sprite(spr_medal, ind, x + 32, y + 54);
 }
 
-// Set highscore
-if (global.currentscore > global.highscore) global.highscore = global.currentscore;
-
-// Display scores
+// Display current score
 draw_text_color((room_width / 2) + 115, (room_height / 2) - 30, string(global.currentscore), 
 	c_white, c_white, c_white, c_white, image_alpha);
 	
+// Set highscore
+if (global.currentscore > global.highscore) {
+	global.highscore = global.currentscore;
+	
+	// Draw "new" if high score is new
+	draw_sprite(spr_new, 1, (room_width / 2) + 115, (room_height / 2) + 30);
+}
+	
+// Display high score
 draw_text_color((room_width / 2) + 115, (room_height / 2) + 30, string(global.highscore), 
 	c_white, c_white, c_white, c_white, image_alpha);
 	

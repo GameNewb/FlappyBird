@@ -1,14 +1,24 @@
 if (global.start == false) exit;
 
-// Move bird horizontally
-// Angle of the sprite
-if (vsp > 3) {
-	if (image_angle > -90)
-		image_angle -= rotation;
+// Star the bird from outside the room and progressively move it forward after game starts
+if (x < 80) {
+	x += 20; 
+	y = 368;
+	grav = 0;
+} else {
+	grav = 0.8;
+	
+	// Move bird horizontally
+	// Angle of the sprite
+	if (vsp > 3) {
+		if (image_angle > -90)
+			image_angle -= rotation;
+	}
+
+	vsp += grav;
+	y += vsp;
 }
 
-vsp += grav;
-y += vsp;
 
 // When left mouse is pressed, make the bird flap
 /*
